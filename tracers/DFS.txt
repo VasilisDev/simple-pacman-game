@@ -1,0 +1,86 @@
+CL-USER 3 > (searchproblem '((f) (p f f f) () (f)) '(()()()(p)) 'dfs) 
+
+____BEGIN_SEARCHING_____ 
+0 FINDSOLUTION > ...
+  >> FRONT  : (((F) (P F F F) NIL (F)))
+  >> QUEUE  : ((((F) (P F F F) NIL (F))))
+  >> CLOSED : NIL
+  >> GOAL   : (NIL NIL NIL (P))
+  >> METHOD : DFS
+  1 FINDSOLUTION > ...
+    >> FRONT  : (((F) (P) NIL (F)) ((P F) (F F F) NIL (F)) ((F) (F F F) (P) (F)))
+    >> QUEUE  : ((((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((P F) (F F F) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (F F F) (P) (F)) ((F) (P F F F) NIL (F))))
+    >> CLOSED : (((F) (P F F F) NIL (F)))
+    >> GOAL   : (NIL NIL NIL (P))
+    >> METHOD : DFS
+    2 FINDSOLUTION > ...
+      >> FRONT  : (((P F) NIL NIL (F)) ((F) NIL (P) (F)) ((P F) (F F F) NIL (F)) ((F) (F F F) (P) (F)))
+      >> QUEUE  : ((((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) NIL (P) (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((P F) (F F F) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (F F F) (P) (F)) ((F) (P F F F) NIL (F))))
+      >> CLOSED : (((F) (P) NIL (F)) ((F) (P F F F) NIL (F)))
+      >> GOAL   : (NIL NIL NIL (P))
+      >> METHOD : DFS
+      3 FINDSOLUTION > ...
+        >> FRONT  : (((P) NIL NIL (F)) ((F) (P) NIL (F)) ((F) NIL (P) (F)) ((P F) (F F F) NIL (F)) ((F) (F F F) (P) (F)))
+        >> QUEUE  : ((((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) NIL (P) (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((P F) (F F F) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (F F F) (P) (F)) ((F) (P F F F) NIL (F))))
+        >> CLOSED : (((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F)))
+        >> GOAL   : (NIL NIL NIL (P))
+        >> METHOD : DFS
+        4 FINDSOLUTION > ...
+          >> FRONT  : ((NIL (P) NIL (F)) ((F) (P) NIL (F)) ((F) NIL (P) (F)) ((P F) (F F F) NIL (F)) ((F) (F F F) (P) (F)))
+          >> QUEUE  : (((NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) NIL (P) (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((P F) (F F F) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (F F F) (P) (F)) ((F) (P F F F) NIL (F))))
+          >> CLOSED : (((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F)))
+          >> GOAL   : (NIL NIL NIL (P))
+          >> METHOD : DFS
+          5 FINDSOLUTION > ...
+            >> FRONT  : (((P) NIL NIL (F)) (NIL NIL (P) (F)) ((F) (P) NIL (F)) ((F) NIL (P) (F)) ((P F) (F F F) NIL (F)) ((F) (F F F) (P) (F)))
+            >> QUEUE  : ((((P) NIL NIL (F)) (NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) ((NIL NIL (P) (F)) (NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) NIL (P) (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((P F) (F F F) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (F F F) (P) (F)) ((F) (P F F F) NIL (F))))
+            >> CLOSED : ((NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F)))
+            >> GOAL   : (NIL NIL NIL (P))
+            >> METHOD : DFS
+            6 FINDSOLUTION > ...
+              >> FRONT  : ((NIL NIL (P) (F)) ((F) (P) NIL (F)) ((F) NIL (P) (F)) ((P F) (F F F) NIL (F)) ((F) (F F F) (P) (F)))
+              >> QUEUE  : (((NIL NIL (P) (F)) (NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) NIL (P) (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((P F) (F F F) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (F F F) (P) (F)) ((F) (P F F F) NIL (F))))
+              >> CLOSED : ((NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F)))
+              >> GOAL   : (NIL NIL NIL (P))
+              >> METHOD : DFS
+              7 FINDSOLUTION > ...
+                >> FRONT  : ((NIL (P) NIL (F)) (NIL NIL NIL (P F)) ((F) (P) NIL (F)) ((F) NIL (P) (F)) ((P F) (F F F) NIL (F)) ((F) (F F F) (P) (F)))
+                >> QUEUE  : (((NIL (P) NIL (F)) (NIL NIL (P) (F)) (NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) ((NIL NIL NIL (P F)) (NIL NIL (P) (F)) (NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) NIL (P) (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((P F) (F F F) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (F F F) (P) (F)) ((F) (P F F F) NIL (F))))
+                >> CLOSED : ((NIL NIL (P) (F)) (NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F)))
+                >> GOAL   : (NIL NIL NIL (P))
+                >> METHOD : DFS
+                8 FINDSOLUTION > ...
+                  >> FRONT  : ((NIL NIL NIL (P F)) ((F) (P) NIL (F)) ((F) NIL (P) (F)) ((P F) (F F F) NIL (F)) ((F) (F F F) (P) (F)))
+                  >> QUEUE  : (((NIL NIL NIL (P F)) (NIL NIL (P) (F)) (NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) NIL (P) (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((P F) (F F F) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (F F F) (P) (F)) ((F) (P F F F) NIL (F))))
+                  >> CLOSED : ((NIL NIL (P) (F)) (NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F)))
+                  >> GOAL   : (NIL NIL NIL (P))
+                  >> METHOD : DFS
+                  9 FINDSOLUTION > ...
+                    >> FRONT  : ((NIL NIL NIL (P)) (NIL NIL (P) (F)) ((F) (P) NIL (F)) ((F) NIL (P) (F)) ((P F) (F F F) NIL (F)) ((F) (F F F) (P) (F)))
+                    >> QUEUE  : (((NIL NIL NIL (P)) (NIL NIL NIL (P F)) (NIL NIL (P) (F)) (NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) ((NIL NIL (P) (F)) (NIL NIL NIL (P F)) (NIL NIL (P) (F)) (NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((F) NIL (P) (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F))) (((P F) (F F F) NIL (F)) ((F) (P F F F) NIL (F))) (((F) (F F F) (P) (F)) ((F) (P F F F) NIL (F))))
+                    >> CLOSED : ((NIL NIL NIL (P F)) (NIL NIL (P) (F)) (NIL (P) NIL (F)) ((P) NIL NIL (F)) ((P F) NIL NIL (F)) ((F) (P) NIL (F)) ((F) (P F F F) NIL (F)))
+                    >> GOAL   : (NIL NIL NIL (P))
+                    >> METHOD : DFS
+
+"Goal found: " 
+                  9 FINDSOLUTION < ...
+                    << VALUE-0 : (((F) (P F F F) NIL (F)) ((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((P) NIL NIL (F)) (NIL (P) NIL (F)) (NIL NIL (P) (F)) (NIL NIL NIL (P F)) (NIL NIL NIL (P)))
+                8 FINDSOLUTION < ...
+                  << VALUE-0 : (((F) (P F F F) NIL (F)) ((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((P) NIL NIL (F)) (NIL (P) NIL (F)) (NIL NIL (P) (F)) (NIL NIL NIL (P F)) (NIL NIL NIL (P)))
+              7 FINDSOLUTION < ...
+                << VALUE-0 : (((F) (P F F F) NIL (F)) ((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((P) NIL NIL (F)) (NIL (P) NIL (F)) (NIL NIL (P) (F)) (NIL NIL NIL (P F)) (NIL NIL NIL (P)))
+            6 FINDSOLUTION < ...
+              << VALUE-0 : (((F) (P F F F) NIL (F)) ((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((P) NIL NIL (F)) (NIL (P) NIL (F)) (NIL NIL (P) (F)) (NIL NIL NIL (P F)) (NIL NIL NIL (P)))
+          5 FINDSOLUTION < ...
+            << VALUE-0 : (((F) (P F F F) NIL (F)) ((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((P) NIL NIL (F)) (NIL (P) NIL (F)) (NIL NIL (P) (F)) (NIL NIL NIL (P F)) (NIL NIL NIL (P)))
+        4 FINDSOLUTION < ...
+          << VALUE-0 : (((F) (P F F F) NIL (F)) ((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((P) NIL NIL (F)) (NIL (P) NIL (F)) (NIL NIL (P) (F)) (NIL NIL NIL (P F)) (NIL NIL NIL (P)))
+      3 FINDSOLUTION < ...
+        << VALUE-0 : (((F) (P F F F) NIL (F)) ((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((P) NIL NIL (F)) (NIL (P) NIL (F)) (NIL NIL (P) (F)) (NIL NIL NIL (P F)) (NIL NIL NIL (P)))
+    2 FINDSOLUTION < ...
+      << VALUE-0 : (((F) (P F F F) NIL (F)) ((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((P) NIL NIL (F)) (NIL (P) NIL (F)) (NIL NIL (P) (F)) (NIL NIL NIL (P F)) (NIL NIL NIL (P)))
+  1 FINDSOLUTION < ...
+    << VALUE-0 : (((F) (P F F F) NIL (F)) ((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((P) NIL NIL (F)) (NIL (P) NIL (F)) (NIL NIL (P) (F)) (NIL NIL NIL (P F)) (NIL NIL NIL (P)))
+0 FINDSOLUTION < ...
+  << VALUE-0 : (((F) (P F F F) NIL (F)) ((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((P) NIL NIL (F)) (NIL (P) NIL (F)) (NIL NIL (P) (F)) (NIL NIL NIL (P F)) (NIL NIL NIL (P)))
+(((F) (P F F F) NIL (F)) ((F) (P) NIL (F)) ((P F) NIL NIL (F)) ((P) NIL NIL (F)) (NIL (P) NIL (F)) (NIL NIL (P) (F)) (NIL NIL NIL (P F)) (NIL NIL NIL (P)))
